@@ -15,7 +15,7 @@ const Navbar = ({ setIsLoggedIn, loggedUser, setLoggedUser }) => {
     setIsLoggedIn(false);
     setLoggedUser(null);
 
-    // ✅ Clear login data from LocalStorage
+    
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("loggedUser");
 
@@ -29,10 +29,13 @@ const Navbar = ({ setIsLoggedIn, loggedUser, setLoggedUser }) => {
       }`}
     >
       <div className="container-fluid">
-        <button onClick={() => navigate(-1)} className="btn btn-success btn-sm me-2">
+
+        <div className="d-flex justify-content-between align-items-center">
+        <Link className="nav-link" to="/">Home</Link>
+        <button onClick={() => navigate(-1)} className="btn btn-success btn-sm ms-2">
           <IoMdArrowRoundBack /> Back
         </button>
-
+        </div>
         <div className="d-flex align-items-center">
           {loggedUser ? (
             <>

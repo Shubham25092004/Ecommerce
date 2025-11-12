@@ -4,7 +4,7 @@ import CardContext from "../hook/CardContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const ProductList = () => {
+const ProductList = ( {onApplyClick}) => {
   const { products, loading, error } = useCustomAPI(
     "https://fakestoreapi.com/products"
   );
@@ -72,9 +72,10 @@ const ProductList = () => {
             </li>
           </ul>
         </div>
+        <button className="btn btn-primary" onClick={onApplyClick}>Check Highest selling Products</button>
       </div>
 
-      {/* Product List */}
+     
       <div className="row">
         {products
           .filter((prod) =>

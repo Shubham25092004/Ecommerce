@@ -13,9 +13,19 @@ const CardProvider = ({ children }) => {
     setCard((prev) => prev.filter((item) => item.id !== id));
   };
 
+    const productdetails = (product) => {
+    setSelectedProduct(product);
+  };
+
   return (
     <CardContext.Provider
-      value={{ card, addToCart, removeFromCart, selectedProduct, setSelectedProduct }}
+      value={{
+        card,
+        addToCart,
+        removeFromCart,
+        selectedProduct,
+        productdetails,
+      }}
     >
       {children}
     </CardContext.Provider>

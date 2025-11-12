@@ -1,10 +1,10 @@
 import React from 'react'
 import ProductiList from '../components/ProductiList'
 
-const Dashboard = () => {
+const Dashboard = ( {onApplyClick} ) => {
   return (
     <>
-      <ProductiList />
+      <ProductiList onApplyClick={onApplyClick}  />
     </>
   )
 }

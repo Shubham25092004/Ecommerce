@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,8 +16,14 @@ const LoginPage = ({ setIsLoggedIn, setLoggedUser }) => {
     setRegisterUser(savedUser);
   }
 
+   const inputRef11 = useRef(null)
+  function handleFocus(){
+     inputRef11.current.focus()
+  }
+
   useEffect(() => {
     getDataFromLocalStorage();
+      handleFocus()
   }, []);
 
   function handleLogin(e) {
@@ -62,6 +68,7 @@ const LoginPage = ({ setIsLoggedIn, setLoggedUser }) => {
                   id="exampleInputEmail1"
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                   ref={inputRef11}
                 />
               </div>
 
